@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "a862b261-4850-44d6-8566-d0a26f7710a8",
+		"name": "Kamile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://omdbapi.com?t=Matrix&apikey=e7f4d66a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Matrix&apikey=e7f4d66a",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Matrix"
+						},
+						{
+							"key": "apikey",
+							"value": "e7f4d66a"
+						}
+					]
+				},
+				"description": "Request to Matrix Movie"
+			},
+			"response": []
+		},
+		{
+			"name": "http://omdbapi.com?t=Batman&apikey=e7f4d66a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Batman&apikey=e7f4d66a",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Batman"
+						},
+						{
+							"key": "apikey",
+							"value": "e7f4d66a"
+						}
+					]
+				},
+				"description": "Batman"
+			},
+			"response": []
+		}
+	]
+}
