@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "87d8c5a6-1156-4cc1-b2ea-530ae85ee7ee",
+		"name": "Atividade_Kamile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "House",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "531eeb76-f9ad-4169-b595-b1a407e48ebb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 10000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"USA\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"JSON body check\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title{} is House\"] = jsonData.Title == \"House\";",
+							"    tests[\"Verify if Year{} is 2004–2012\"] = jsonData.Year == \"2004–2012\";",
+							"    tests[\"Verify if Language{} is English\"] = jsonData.Language == \"English\";",
+							"    tests[\"Verify if Runtime{} is 44 min\"] = jsonData.Runtime == \"44 min\";",
+							"    tests[\"Verify if Released{} is 16 Nov 2004\"] = jsonData.Released == \"16 Nov 2004\";",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=House&apikey=e7f4d66a",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "House"
+						},
+						{
+							"key": "apikey",
+							"value": "e7f4d66a"
+						}
+					]
+				},
+				"description": "House"
+			},
+			"response": []
+		},
+		{
+			"name": "http://omdbapi.com?t=The Avengers&apikey=e7f4d66a",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "60924286-eb78-4d87-b39f-3e02a23ecded",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than1600ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"USA\");",
+							"});",
+							"",
+							"pm.test(\"JSON body check\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title{} is House\"] = jsonData.Title == \"The Avengers\";",
+							"    tests[\"Verify if Year{} is 2012\"] = jsonData.Year == \"2012\";",
+							"    tests[\"Verify if Language{} is English, Russian, Hindi\"] = jsonData.Language == \"English, Russian, Hindi\";",
+							"    tests[\"Verify if Runtime{} is 143 min\"] = jsonData.Runtime == \"143 min\";",
+							"    tests[\"Verify if Released{} is 04 May 2012\"] = jsonData.Released == \"04 May 2012\";",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=The Avengers&apikey=e7f4d66a",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "The Avengers"
+						},
+						{
+							"key": "apikey",
+							"value": "e7f4d66a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
